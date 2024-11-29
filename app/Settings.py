@@ -4,5 +4,6 @@ class Settings:
     PROJECT_PATH = ''
     PROJECT_PATH_MS =''
     ORIGINAL_PROJECT_PATH = ''
+    OUTPUT_PATH = ''
     DIRECTORY = os.path.abspath(os.getcwd())
     PrimitiveTypes = ["byte","short","int","Integer","long","Long","float","double","boolean","String","char","void"]

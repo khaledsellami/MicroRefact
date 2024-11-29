@@ -6,8 +6,8 @@ from Settings  import Settings
 
 path = os.getcwd()
 
-def createFolderForProject ():
-    pathToProject = path+"/Results/" + Settings.PROJECT_NAME 
+def createFolderForProject (Settings):
+    pathToProject = os.path.join(Settings.OUTPUT_PATH, "refactored", Settings.PROJECT_NAME)
     try:
         os.makedirs(pathToProject)
     except OSError:
