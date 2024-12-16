@@ -58,3 +58,28 @@ decompose_with_topicdecomp.bat your_app_name /path/to/your/source/code
 ```
 
 You'll find the decomposition file in the `outputs/your_app_name/parsed_microRefact` folder.
+
+
+# Refactor the code without building the application
+
+## Requirements
+- Docker
+
+## Steps
+
+Use the following example to refactor the code without building the application (useful for testing the refactoring logic):
+
+```sh
+SOURCE_DIR=/path/to/the/monolith/source/code/
+OUTPUT_DIR=/path/to/where/to/save/results/and/refactored/code/
+DECOMP_DIR=/path/to/your/microservice/candidates/
+DECOMP_FILENAME=file.json
+
+
+docker run -it --rm -v "$SOURCE_DIR":/source \
+                    -v "$DECOMP_DIR":/json_dir \
+                    -v "$OUTPUT_DIR":/outputs  \
+                    dcalsel/microrefact:latest -c /json_dir/"$DECOMP_FILENAME" -pp /source -op/outputs
+```
+
+Remember to replace the variables with the correct paths and names.
