@@ -38,3 +38,23 @@ python app/main.py -c /path/to/your/microservice/candidates/file.json \
 ```
 4. Inspect your refactored code in "/path/to/where/to/save/results/and/refactored/code/refactored/your_app_name"
 
+
+# Generate decompositions with the Topic Modeling model
+
+## Requirements
+- Python
+- Docker
+
+## Steps
+
+```sh
+cd topicDecomp
+sh decompose_with_topicdecomp.sh your_app_name /path/to/your/source/code 
+```
+if using Windows:
+```commandline
+cd topicDecomp
+decompose_with_topicdecomp.bat your_app_name /path/to/your/source/code
+```
+
+You'll find the decomposition file in the `outputs/your_app_name/parsed_microRefact` folder.
